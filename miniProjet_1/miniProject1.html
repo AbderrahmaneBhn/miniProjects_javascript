@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QCM</title>
+    <link rel="stylesheet" href="miniProject1.css">
+    <link rel="icon" href="quiz.png">
+    <script src="miniProject1.js" defer></script>
+</head>
+<body>
+
+    
+    
+    <form id="quiz-config-form" class="quiz-config">
+        <h2>API HELPER</h2>
+        <br>
+        <label for="category">Category:</label>
+        <select id="category" name="category">
+            <!-- Categories will be dynamically added here -->
+        </select>
+    
+        <label for="type">Select Type:</label>
+        <select id="type" name="type">
+            <option value="boolean">True/False</option>
+            <option value="multiple">Multiple Choice</option>
+        </select>
+    
+        <label for="difficulty">Difficulty:</label>
+        <select id="difficulty" name="difficulty">
+            <option value="easy">Easy</option>
+            <option value="medium">Medium</option>
+            <option value="hard">Hard</option>
+        </select>
+    
+        <label for="number-of-questions">Number of Questions:</label>
+        <input type="number" id="number-of-questions" name="number-of-questions" min="1" max="50" value="3">
+    
+        <label for="encoding">Encoding:</label>
+        <select id="encoding" name="encoding">
+            <option value="url3986">URL 3986</option>
+            <option value="base64">Base64</option>
+            <option value="default">Default Encoding</option>
+        </select>
+    
+        <button type="submit">START QUIZ</button>
+    </form>
+    
+        
+        <div class="container" style="display: none;">
+            <div class="titre">
+                <div class="time"> 
+                    Timer <br>
+                    00:<span id="timer">00</span>
+                </div>
+                <h1>QUIZ</h1>
+                <div class="score">score <br>
+                    <span class="score_value">  </span>
+                </div>
+            </div>
+
+            <div class="question">
+                <h3>Question :</h3>
+                <div class="question_display"></div>
+            </div>
+
+                
+            <div class="choices-part">
+                <h2>Choices :</h2>
+                <div class="choices">
+                    <ul></ul>
+                </div>
+            </div>
+
+            <div class="afficher">
+                <h1>Results</h1>
+                <div class="finalScore"></div>
+            </div>
+
+            <div class="answer">
+                <div class="buttons">
+                    <button id="startButton" type="button" onclick="startClicked(event)">START</button>
+                    <button id="envoyerButton" type="button" onclick="nextQuestion(event)" style="display: none;">Envoyer</button>
+                </div>
+            </div>
+        </div>
+    
+</body>
+</html>

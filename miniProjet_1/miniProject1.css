@@ -1,0 +1,318 @@
+/* FONT-FAMILY  POPPINS*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+*{
+    font-family: "Poppins", sans-serif;
+    margin: 0;
+    padding: 0;
+    
+}
+body {
+    background: linear-gradient(180deg, #ffffff, #f2f2f2);
+    color: #333333;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+}
+
+
+
+.container{
+    margin-top: 10px;
+    padding-top: 20px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 70%;
+    border: 1px solid black;
+   
+    
+}
+
+.container .titre {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 10px;
+    background-color: beige;
+    border-radius: 24px;
+    width: 80%;
+    height: 100px;
+    font-size: 80px;
+    font-weight: 600;
+    min-width: 400px;
+    
+}
+
+.titre .time{
+    font-size: 24px;
+    width: 80px;
+    padding-left: 30px;
+    padding-top: 20px;
+    font-family: monospace;
+    
+}
+#timer {
+    font-family: monospace;
+    width: 3ch;      
+    text-align: center;
+}
+
+
+
+.container .titre h1{
+    letter-spacing: 20px;
+    font-size: 80px;
+    font-weight: 600;
+    color: rgba(0, 0, 255, 0.5);
+    transition: color 0.5s;
+}
+
+.container .titre h1:hover{
+    color: rgba(0, 0, 255, 0.9);
+}
+
+.container .titre .score{
+    width: 90px;
+    font-size: 20px;
+}
+
+
+
+.container .question h3{
+    font-size: 30px;
+}
+
+.question {
+    min-width: 400px;
+    width: 70%;
+    margin-top: 20px;
+
+}
+.question .question_display{
+    
+    width: 100%;
+    min-height: 120px; 
+    padding: 10px;
+    border: 1px solid red;
+    background-color: #ffffff;
+    color: #333333;
+    border-radius: 24px;
+    font-size: 35px;
+
+    height: auto;
+}
+
+
+.choices-part{
+    width: 70%;
+    margin-top: 15px;
+    min-width: 400px;
+    
+}
+.choices{
+    width: 98%;
+    height: 100px;
+    border: 1px solid red;
+    font-size: 17px;
+    padding: 10px;  
+    border-radius: 24px;
+    background-color: #ffffff;
+    color: #333333;
+    padding-left: 30px;
+ 
+    
+    
+}
+
+.answer{
+    width: 70%;
+    height: 100px;
+    margin-top: 15px;
+    
+    border-radius: 24px;
+}
+
+.answer select {
+    width: 100%;
+    height: 40px; 
+    border: solid 3px black;
+    
+}
+
+.answer label {
+    display: block;     
+    font-size: 30px;
+    margin-bottom: 10px; 
+}
+
+.buttons {
+    display: flex;
+    justify-content: center; /* Centers buttons horizontally */
+    align-items: center; /* Centers buttons vertically */
+    margin-top: 15px;
+    position: relative;
+}
+
+#startButton, #envoyerButton {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    width: 200px;
+    border-radius: 8px;
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#startButton:hover, #envoyerButton:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+#startButton:active, #envoyerButton:active {
+    transform: translateY(0);
+    box-shadow: none;
+}
+
+#envoyerButton {
+    display: inline-block; /* Both buttons visible initially */
+    background-color: #28a745; /* Green for Envoyer */
+    display: none;
+}
+
+#startButton {
+    display: inline-block; /* Both buttons visible initially */
+}
+
+.choices ul {
+    list-style: none;
+}
+
+
+
+.config-form {
+    width: 50%;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.config-form h2 {
+    text-align: center;
+}
+
+.config-form label {
+    display: block;
+    margin-top: 10px;
+    font-weight: 600;
+}
+
+.config-form input, 
+.config-form select {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.config-form button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-top: 20px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.config-form button:hover {
+    background-color: #0056b3;
+}
+
+
+
+.quiz-config {
+    display: flex;
+    flex-direction: column; /* Arrange items vertically */
+    width: 60%;
+    height: 50%;
+    background-color: #373e4e;
+    color: white;
+    margin-top: 1%;
+    padding: 20px 0px;
+    
+  
+}
+
+.quiz-config label {
+    margin-bottom: 5px; /* Optional, for space between label and input */
+    margin-left: 5%;
+}
+
+
+
+
+.quiz-config select,
+.quiz-config input {
+    width: 90%; /* Make the inputs take up the full width */
+    margin-left: 5%;
+    padding: 8px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+#number-of-questions{
+    width: 88%; /* Make the inputs take up the full width */
+}
+.quiz-config button{
+    color: white;
+    background-color: #15191f;
+    height: 60px;
+    width: 75%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    margin-left: 12.5%;
+}
+.quiz-config h2{
+    margin-left: 5%;
+}
+
+.finalScore{
+    display: none;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    font-size: 30px;
+    height: 150px;
+    width: 150px;
+    border: 4px dashed black;
+
+}
+.afficher{
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 30px;
+
+    justify-content: space-around;
+   
+    height: 250px;
+
+}
+
+
+
