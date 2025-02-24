@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Manager</title>
+    <script src="https://unpkg.com/vue@3.3.4/dist/vue.global.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .task {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+        }
+        .completed {
+            text-decoration: line-through;
+            color: #888;
+        }
+        .filters {
+            margin-bottom: 20px;
+        }
+        .filters button {
+            margin-right: 10px;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+        .filters button.active {
+            background-color: #007bff;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <h1>Task Manager</h1>
+        <div class="filters">
+            <button @click="filter = 'all'" :class="{ active: filter === 'all' }">All</button>
+            <button @click="filter = 'pending'" :class="{ active: filter === 'pending' }">Pending</button>
+            <button @click="filter = 'completed'" :class="{ active: filter === 'completed' }">Completed</button>
+        </div>
+        <div v-for="task in filteredTasks" :key="task.id" class="task" :class="{ completed: task.completed }">
+            <h3>{{ task.title }}</h3>
+            <p>{{ task.description }}</p>
+            <button v-show="!task.completed" @click="markAsCompleted(task.id)">Mark as Completed</button>
+        </div>
+        <p>Total Tasks: {{ totalTasks }}</p>
+    </div>
+
+    <script>
+        const { createApp } = Vue;
+
+        const app = createApp({
+            data() {
+                return {
+                    // Load tasks directly in the data
+                    tasks: [
+                        { id: 1, title: "Faire les courses", description: "Acheter des légumes et du lait.", completed: false },
+                        { id: 2, title: "Faire du sport", description: "Courir pendant 30 minutes.", completed: true },
+                        { id: 3, title: "Réviser pour l'examen", description: "Relire le chapitre 5 du manuel.", completed: false }
+                    ],
+                    // Filter state
+                    filter: 'all'
+                };
+            },
+            computed: {
+                // Computed property to filter tasks based on the selected filter
+                filteredTasks() {
+                    if (this.filter === 'pending') {
+                        return this.tasks.filter(task => !task.completed);
+                    } else if (this.filter === 'completed') {
+                        return this.tasks.filter(task => task.completed);
+                    } else {
+                        return this.tasks;
+                    }
+                },
+                // Computed property to calculate the total number of tasks
+                totalTasks() {
+                    return this.tasks.length;
+                }
+            },
+            methods: {
+                // Method to mark a task as completed
+                markAsCompleted(taskId) {
+                    const task = this.tasks.find(task => task.id === taskId);
+                    if (task) {
+                        task.completed = true;
+                    }
+                }
+            }
+        });
+
+        app.mount('#app');
+    </script>
+</body>
+</html>
