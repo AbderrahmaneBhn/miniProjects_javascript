@@ -1,0 +1,179 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+body {
+    max-width: 1200px;
+    margin: auto;
+    padding: 16px;
+    font-family: 'Montserrat', sans-serif;
+    box-sizing: border-box;
+    background-color: #f4f4f4;
+}
+
+header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 16px;
+    background-color: #333;
+    text-align: center;
+    color: #fff;
+    padding: 10px 20px;
+    border-bottom: 3px solid #ff5722;
+}
+
+header img {
+    height: 150px;
+    width: 180px;
+    margin-left: 1rem;
+    border-radius: 10px;
+}
+
+header h1 {
+    flex-grow: 1;
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-left: 20px;
+}
+
+#input {
+    display: flex;
+    justify-content: center;
+}
+
+#input input {
+    width: 450px;
+    height: 40px;
+    padding: 1px 15px;
+    border: 2px solid #ccc;
+    border-radius: 25px;
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1);
+    margin: 20px 0px 50px 0px;
+    font-size: 16px;
+}
+
+#input select {
+    width: 300px;
+    height: 40px;
+    padding: 1px 15px;
+    border: 2px solid #ccc;
+    border-radius: 25px;
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1);
+    margin: 20px 0px 50px 20px;
+    font-size: 16px;
+    background-color: #fff;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.fiches {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    margin: 8px;
+}
+
+.fiches img {
+    max-width: 200px;
+    min-height: 200px;
+    border-radius: 10px;
+}
+
+.fiches #piece-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    margin: 8px;
+    padding: 16px;
+    min-width: 300px;
+    max-width: 300px;
+    min-height: 400px;
+    position: relative;
+    background-color: #fff;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.fiches #piece-container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.fiches button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.2);
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    bottom: 30px;
+    right: 20px;
+    cursor: pointer;
+    background-color: #ff5722;
+    color: #fff;
+    transition: background-color 0.3s ease;
+}
+
+.fiches button:hover {
+    background-color: #e64a19;
+}
+
+.fiches button i {
+    font-size: 20px;
+}
+
+.fiches > div h3 {
+    text-align: center;
+    font-size: 1.5rem;
+    margin: 10px 0;
+}
+
+.fiches > div span {
+    font-size: 18px;
+    font-weight: 800;
+    color: #333;
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    header img {
+        margin-left: 0;
+        margin-bottom: 10px;
+    }
+
+    #input {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #input input, #input select {
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    .fiches {
+        justify-content: center;
+    }
+
+    .fiches #piece-container {
+        min-width: 250px;
+        max-width: 250px;
+    }
+}

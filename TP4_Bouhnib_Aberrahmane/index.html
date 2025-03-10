@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="fr">
+	<head>
+		<meta charset="utf-8">
+		<title>Les Bonnes Pièces</title>
+		<link rel="stylesheet" href="styles.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+		<script type="module" src="pieces.js"></script>
+		<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+	</head>
+	<body >
+		<div id="app">
+			<header>
+				<img src="images/logo.webp" alt="LOGO">
+				<h1>Les Bonnes Pièces</h1>
+			</header>
+
+			<main>
+				<!-- Menu de recherche -->
+				<section class="filtres" >
+					<div id="input">
+						<input type="text" placeholder="Chercher...." v-model="filtrePiece">
+
+						<select v-model="categorie">
+							<option value="" disabled selected>Categorie</option>
+							<option value="">All</option>
+							<option value="Transmission">Transmission</option>
+							<option value="Suspension">Suspension</option>
+							<option value="Électricité">Électricité</option>
+							<option value="Direction">Direction</option>
+							<option value="Moteur">Moteur</option>
+							<option value="Échappement">Échappement</option>
+							<option value="Carrosserie">Carrosserie</option>
+							<option value="Sécurité">Sécurité</option>
+							<option value="Carburant">Carburant</option>
+							<option value="Refroidissement">Refroidissement</option>
+							<option value="Filtration">Filtration</option>
+							<option value="Freinage">Freinage</option>
+						</select>
+
+						<select v-model="filtrePrix">
+							<option value="" disabled selected>Prix</option>
+							<option value="">aléatoire</option>
+							<option value="croissant">croissant</option>
+							<option value="décroissant">décroissant</option>
+						</select>
+
+					</div>
+				</section>
+
+				<!-- Fiches produits -->
+				<section class="fiches" >
+					<div v-for="p in piecesFiltreesEtTriees">
+						<div id="piece-container">
+							<h3>{{p.nom}}</h3>
+							<img :src="'images/' + p.Image" alt="image">
+							<span>{{p.prix}} DH</span>
+							<button @click="ajouterPanier(p.id,p.nom)" ><i class="fa-solid fa-cart-shopping"></i></button>
+						</div>
+					</div>
+				</section>
+			</main>	
+
+		</div>
+	</body>
+</html>
